@@ -1,57 +1,50 @@
 Deepnote Notebook Trigger
 =============
 
-Description
+Deepnote is a collaborative data science notebook.
+
+This component enables you to trigger the running of a specified notebook in Deepnote.
 
 **Table of contents:**
 
 [TOC]
 
-Functionality notes
-===================
-
 Prerequisites
 =============
 
-Get the API token, register application, etc.
+Get the API token, only available to Team and Enterprise plans of Deepnote
 
-Features
-========
-
-| **Feature**             | **Note**                                      |
-|-------------------------|-----------------------------------------------|
-| Generic UI form         | Dynamic UI form                               |
-| Row Based configuration | Allows structuring the configuration in rows. |
-| oAuth                   | oAuth authentication enabled                  |
-| Incremental loading     | Allows fetching data in new increments.       |
-| Backfill mode           | Support for seamless backfill setup.          |
-| Date range filter       | Specify date range.                           |
-
-Supported endpoints
-===================
-
-If you need more endpoints, please submit your request to
-[ideas.keboola.com](https://ideas.keboola.com/)
 
 Configuration
 =============
 
-Param 1
--------
+## Deepnote Trigger configuration
 
-Param 2
--------
+- API Key (#api_token) - [REQ] API key generated in Deepnote, described in
+  the <a href='https://deepnote.com/docs/deepnote-api'>documentation</a>
+- Project id (project_id) - [REQ] ID of the project in which the notebook is. The ID can be obtained via the URL path to
+  the notebook, described in the <a href='https://deepnote.com/docs/api-execute-notebook'>documentation</a>
+- Notebook id (notebook_id) - [REQ] The ID of the Notebook to be run, which can be obtained via the URL path to the
+  notebook, described in the <a href='https://deepnote.com/docs/api-execute-notebook'>documentation</a>
 
-Output
-======
+Sample Configuration
+=============
 
-List of tables, foreign keys, schema.
+```json
+{
+  "parameters": {
+    "#api_token": "SECRET_VALUE",
+    "project_id": "25fcb3b2-cf3d-4c08-9b24-4306f1518caa",
+    "notebook_id": "abaf726ac4c34589961a588de29cd665"
+  }
+}
+```
 
 Development
 -----------
 
-If required, change local data folder (the `CUSTOM_FOLDER` placeholder) path to
-your custom path in the `docker-compose.yml` file:
+If required, change local data folder (the `CUSTOM_FOLDER` placeholder) path to your custom path in
+the `docker-compose.yml` file:
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     volumes:
@@ -59,12 +52,9 @@ your custom path in the `docker-compose.yml` file:
       - ./CUSTOM_FOLDER:/data
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Clone this repository, init the workspace and run the component with following
-command:
+Clone this repository, init the workspace and run the component with following command:
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-git clone https://bitbucket.org/kds_consulting_team/kds-team.app-deepnote-notebook-trigger/src/master/ deepnote_notebook_trigger
-cd deepnote_notebook_trigger
 docker-compose build
 docker-compose run --rm dev
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -79,5 +69,4 @@ Integration
 ===========
 
 For information about deployment and integration with KBC, please refer to the
-[deployment section of developers
-documentation](https://developers.keboola.com/extend/component/deployment/)
+[deployment section of developers documentation](https://developers.keboola.com/extend/component/deployment/)

@@ -1,1 +1,1 @@
-Deepnote is a collaborative data science notebook that helps teams discover, understand, and share their findings with anyone.This component enables you to Ttrigger the running of a specified notebook in Deepnote
+This component enables you to trigger the running of a specified notebook in Deepnote.

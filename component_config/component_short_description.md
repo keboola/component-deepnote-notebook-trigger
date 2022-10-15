@@ -1,1 +1,1 @@
-Deepnote Notebook Trigger short description
+Deepnote is a collaborative data science notebook.

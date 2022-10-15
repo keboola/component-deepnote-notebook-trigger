@@ -1,1 +1,1 @@
-Configuration description.
+Note : the API to trigger the notebook run is only available to Team and Enterprise plans of Deepnote.

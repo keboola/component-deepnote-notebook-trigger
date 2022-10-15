@@ -1,19 +1,30 @@
 {
-  "type": "object",
-  "title": "extractor configuration",
-  "required": [
-    "print_hello"
-  ],
-  "properties": {
-    "print_hello": {
-      "type": "boolean",
-      "title": "Print Hello",
-      "propertyOrder": 1
-    },
-    "debug": {
-      "type": "boolean",
-      "title": "Debug",
-      "propertyOrder": 2
-    }
-  }
+      "title": "Deepnote Trigger configuration",
+      "type": "object",
+      "required": [
+            "#api_token",
+            "project_id",
+            "notebook_id"
+      ],
+      "properties": {
+            "#api_token": {
+                  "propertyOrder": 10,
+                  "title": "API Key",
+                  "type": "string",
+                  "description": "API key generated in Deepnote, described in the <a href='https://deepnote.com/docs/deepnote-api'>documentation</a>",
+                  "format": "password"
+            },
+            "project_id": {
+                  "propertyOrder": 20,
+                  "title": "Project id",
+                  "type": "string",
+                  "description": "ID of the project in which the notebook is. The ID can be obtained via the URL path to the notebook, described in the <a href='https://deepnote.com/docs/api-execute-notebook'>documentation</a>"
+            },
+            "notebook_id": {
+                  "propertyOrder": 30,
+                  "title": "Notebook id",
+                  "type": "string",
+                  "description": "The ID of the Notebook to be run, which can be obtained via the URL path to the notebook, described in the <a href='https://deepnote.com/docs/api-execute-notebook'>documentation</a>"
+            }
+      }
 }
