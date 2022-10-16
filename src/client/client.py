@@ -10,8 +10,8 @@ class DeepnoteClientException(Exception):
 
 class DeepnoteClient(HttpClient):
     def __init__(self, token: str):
-        self.token = token
-        super().__init__(BASE_URL)
+        header = {"Authorization": f"Bearer {token}"}
+        super().__init__(BASE_URL, default_http_header=header)
 
     def start_notebook(self, project_id: str, notebook_id: str):
         try:
