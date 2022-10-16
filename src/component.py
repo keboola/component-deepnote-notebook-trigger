@@ -38,7 +38,7 @@ class Component(ComponentBase):
         except DeepnoteClientException as deepnote_exc:
             raise UserException(f"Failed to start notebook : {deepnote_exc}") from deepnote_exc
 
-        logging.info(f"Response from Deepnote : {response}")
+        logging.info(f"Response from Deepnote : {response.text}")
         logging.info("The notebook has successfully been triggered.")
 
 
