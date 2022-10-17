@@ -19,5 +19,7 @@ class DeepnoteClient(HttpClient):
         except HTTPError as http_err:
             raise DeepnoteClientException(http_err) from http_err
         if response.status_code not in [202, 200]:
-            raise DeepnoteClientException(f"Failed to start notebook : {response.text} : {response.status_code}")
+            raise DeepnoteClientException(f"Failed to start notebook, make sure your API token is valid and your "
+                                          f"Project and Notebook IDs are valid : "
+                                          f"{response.text} : {response.status_code}")
         return response
