@@ -16,13 +16,13 @@
             },
             "project_id": {
                   "propertyOrder": 20,
-                  "title": "Project id",
+                  "title": "Project ID",
                   "type": "string",
-                  "description": "ID of the project in which the notebook is"
+                  "description": "ID of the project which contains the notebook"
             },
             "notebook_id": {
                   "propertyOrder": 30,
-                  "title": "Notebook id",
+                  "title": "Notebook ID",
                   "type": "string",
                   "description": "The ID of the Notebook to be run"
             }
