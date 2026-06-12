@@ -1,1 +1,1 @@
-Deepnote is a collaborative data science notebook.
+Triggers a Deepnote notebook run.
